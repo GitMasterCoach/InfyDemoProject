@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Search and Display Records">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Enter Object Name" value={objectName} onchange={handleObjectNameChange}></lightning-input>
+            <template if:true={objectFields}>
+                <lightning-dual-listbox label="Select Fields to Display" source-label="Available Fields" selected-label="Selected Fields" options={objectFields} onchange={handleFieldsChange}></lightning-dual-listbox>
+            </template>
+            <template if:true={objectRecords}>
+                <lightning-datatable data={objectRecords} columns={selectedFields}></lightning-datatable>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,14 @@
+<!-- c/myApp.html -->
+<template>
+    <lightning-button onclick={handleAlertClick} label="Open Alert Modal">
+    </lightning-button>
+		<lightning-button onclick={handleConfirmClick} label="Open Confirm Modal"></lightning-button>
+		 <lightning-button onclick={handlePromptClick} label="Open Prompt Modal">
+    </lightning-button>
+		------------
+		 <lightning-modal-header label="My Modal Heading"></lightning-modal-header>
+    <lightning-modal-body>This is the modal’s contents.</lightning-modal-body>
+    <lightning-modal-footer>
+        <lightning-button label="OK" onclick={handleOkay}></lightning-button>
+    </lightning-modal-footer>
+</template>

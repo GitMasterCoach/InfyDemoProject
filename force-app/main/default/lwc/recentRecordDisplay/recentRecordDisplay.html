@@ -1,0 +1,19 @@
+<template>
+    Test Recent Records====>:
+    <lightning-card title="Recent Records">
+        <template if:true={recentRecords.data}>
+            <template for:each={recentRecords.data} for:item="record">
+                <lightning-record-view-form key={record.Id} record-id={record.Id} object-api-name={objectApiName}>
+                    <template for:each={fieldApiNames} for:item="fieldApiName">
+                        <div key={fieldApiName}>
+                            <lightning-output-field field-name={fieldApiName}></lightning-output-field>
+                        </div>
+                    </template>
+                </lightning-record-view-form>
+            </template>
+        </template>
+        <template if:true={recentRecords.error}>
+            {recentRecords.error}
+        </template>
+    </lightning-card>
+</template>
