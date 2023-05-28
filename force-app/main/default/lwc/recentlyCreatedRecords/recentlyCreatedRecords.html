@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Recently Created Records">
+        <div class="slds-m-around_medium">
+            <lightning-combobox label="Select Object" value={selectedObject} options={objectOptions} onchange={handleObjectChange}></lightning-combobox>
+            <lightning-input label="Number of Records" type="number" min="1" value={recordLimit} onchange={handleLimitChange}></lightning-input>
+            <lightning-datatable columns={tableColumns} data={tableData} key-field="Id" onrowaction={handleRowAction} hide-checkbox-column=true></lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

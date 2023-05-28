@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Fetch Object Fields">
+        <div class="slds-p-around_medium">
+            <lightning-combobox label="Select Object" value={selectedObject} options={objectOptions} onchange={handleObjectChange}></lightning-combobox>
+            <lightning-button variant="brand" label="Fetch Fields" onclick={handleFetchFields} class="slds-m-top_medium"></lightning-button>
+            <template if:true={fields}>
+                <div class="slds-m-top_medium">
+                    <p>Fields for {selectedObject}</p>
+                    <ul>
+                        <template for:each={fields} for:item="field">
+                            <li key={field}>{field}</li>
+                        </template>
+                    </ul>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

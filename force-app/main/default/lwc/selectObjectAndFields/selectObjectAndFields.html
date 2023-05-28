@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Select Object and Fields">
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <lightning-combobox label="Select an Object" value={selectedObject} options={objectOptions} onchange={handleObjectChange}></lightning-combobox>
+            </div>
+            <div class="slds-col">
+                <lightning-combobox label="Select Fields" value={selectedFields} options={fieldOptions} onchange={handleFieldsChange} disabled={isFieldsDisabled}></lightning-combobox>
+            </div>
+        </div>
+    </lightning-card>
+</template>

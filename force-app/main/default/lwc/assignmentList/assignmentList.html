@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Assignment List">
+        <div class="slds-p-around_medium">
+            <lightning-input label="Title Filter" onchange={handleTitleChange}></lightning-input>
+            <lightning-combobox label="Priority Filter" options={priorityOptions} onchange={handlePriorityChange}></lightning-combobox>
+        </div>
+        <div class="slds-p-around_medium">
+            <lightning-datatable
+                data={assignments}
+                columns={columns}
+                key-field="Id"
+                hide-checkbox-column="true"
+                onrowselection={handleRowSelection}
+            ></lightning-datatable>
+            <div class="slds-align_absolute-center">
+                <lightning-button-group>
+                    <lightning-button label="Previous" onclick={previousPage} disabled={disablePrevious}></lightning-button>
+                    <lightning-button label="Next" onclick={nextPage} disabled={disableNext}></lightning-button>
+                </lightning-button-group>
+            </div>
+        </div>
+    </lightning-card>
+</template>

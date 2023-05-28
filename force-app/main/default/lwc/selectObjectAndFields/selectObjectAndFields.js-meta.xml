@@ -1,0 +1,21 @@
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <description>A Lightning web component that displays a list of objects as a picklist and allows the user to select fields on the selected object.</description>
+    <isExposed>true</isExposed>
+    <masterLabel>ObjectFieldPicker</masterLabel>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <objects>
+                <object>Account</object>
+                <object>Contact</object>
+                <object>Opportunity</object>
+                <!-- Add any other objects that you want to support here -->
+            </objects>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
